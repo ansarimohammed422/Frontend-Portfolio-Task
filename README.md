@@ -103,8 +103,8 @@ The website is built with a mobile-first approach and includes:
 
 ## 📧 Contact Information
 
-- **Email**: mohammed.ansari@email.com
-- **Phone**: +91 1234567890
+- **Email**: ansarimohammed122@email.com
+- **Phone**: +91 9326797184
 - **Location**: Available for Remote Work
 - **Website**: www.mohammedansari.dev
 
@@ -173,7 +173,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Ready to start your project? Whether it's a small website or a complex web application, I'm here to help bring your vision to life.
 
 - ⚡ Quick Response
-- ⭐ Professional Service  
+- ⭐ Professional Service
 - ✅ Quality Results
 - 👥 Collaborative Approach
 

@@ -98,7 +98,7 @@ function Contact() {
                       Email
                     </h4>
                     <p className="text-gray-600 text-sm lg:text-base break-all">
-                      mohammed.ansari@email.com
+                      ansarimohammed122@email.com
                     </p>
                   </div>
                 </div>

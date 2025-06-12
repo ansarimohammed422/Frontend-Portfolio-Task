@@ -25,7 +25,7 @@ function Testimonials() {
       name: "Sarah Johnson",
       position: "Product Manager",
       company: "TechFlow Solutions",
-      rating: 5,
+      rating: 4,
       image: "https://loremfaces.net/96/id/1.jpg",
       review:
         "Mohammed delivered an exceptional React application that exceeded our expectations. His attention to detail and ability to translate complex requirements into clean, functional code is impressive. Highly recommend!",
@@ -35,7 +35,7 @@ function Testimonials() {
       name: "David Chen",
       position: "CTO",
       company: "StartupLab",
-      rating: 5,
+      rating: 3,
       image: "https://loremfaces.net/96/id/1.jpg",
       review:
         "Working with Mohammed was a game-changer for our project. His Django backend integration was flawless, and the API he built handles our growing user base perfectly. Professional and reliable!",
@@ -45,7 +45,7 @@ function Testimonials() {
       name: "Emily Rodriguez",
       position: "UI/UX Designer",
       company: "Creative Minds Agency",
-      rating: 5,
+      rating: 4,
       image: "https://loremfaces.net/96/id/1.jpg",
       review:
         "Mohammed brought our designs to life beautifully! His CSS skills are top-notch, and he made sure every pixel was perfect. The responsive design works seamlessly across all devices.",
