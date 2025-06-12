@@ -135,8 +135,257 @@
 //   );
 // // }
 
+// import React, { useState, useEffect } from "react";
+// import { FaBars, FaTimes } from "react-icons/fa";
+
+// export default function Navbar() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setIsScrolled(window.scrollY > 30);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const items = [
+//     { label: "Home", href: "#home" },
+//     { label: "About", href: "#about" },
+//     { label: "Skills", href: "#skills" },
+//     { label: "Projects", href: "#projects" },
+//     { label: "Testimonials", href: "#testimonials" },
+//     { label: "Contact", href: "#contact" },
+//   ];
+
+//   const handleSmoothScroll = (e, href) => {
+//     e.preventDefault();
+//     setIsMenuOpen(false);
+
+//     const targetElement = document.querySelector(href);
+//     const navbarHeight = 80;
+//     if (targetElement) {
+//       const position =
+//         href === "#home" ? 0 : targetElement.offsetTop - navbarHeight;
+//       window.scrollTo({ top: position, behavior: "smooth" });
+//     }
+//   };
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//   };
+
+//   return (
+//     <nav className="fixed top-0 left-0 w-full z-50 px-4 py-3">
+//       {/* Desktop Navbar */}
+//       <div className="hidden lg:flex justify-center">
+//         <div
+//           className={`w-full transition-all duration-700 ease-in-out rounded-xl border border-blue-500 bg-blue-50/30 backdrop-blur-lg
+//             ${
+//               isScrolled
+//                 ? "max-w-[700px] px-8 py-3 shadow-md scale-[0.98]"
+//                 : "max-w-screen px-10 py-4 scale-100"
+//             } mx-auto`}
+//         >
+//           <ul className="flex justify-center gap-4">
+//             {items.map((item) => (
+//               <li key={item.label}>
+//                 <a
+//                   href={item.href}
+//                   onClick={(e) => handleSmoothScroll(e, item.href)}
+//                   className="text-blue-500 hover:text-white hover:bg-blue-500 text-lg font-semibold px-3 py-1 border border-blue-500 rounded-lg transition-all duration-300 ease-in-out whitespace-nowrap"
+//                 >
+//                   {item.label}
+//                 </a>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navbar */}
+//       <div className="lg:hidden">
+//         <div className="flex justify-between items-center bg-blue-50/90 backdrop-blur-lg px-4 py-3 rounded-xl border border-blue-500">
+//           <div className="text-blue-500 font-bold text-lg">Mohammed Ansari</div>
+//           <button
+//             onClick={toggleMenu}
+//             className="text-blue-500 hover:text-blue-600 p-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110"
+//             aria-label="Toggle menu"
+//           >
+//             {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+//           </button>
+//         </div>
+
+//         {/* Mobile Menu */}
+//         <div
+//           className={`mt-2 bg-blue-50/95 backdrop-blur-lg rounded-xl border border-blue-500 shadow-lg overflow-hidden transition-all duration-300 ease-in-out transform origin-top ${
+//             isMenuOpen
+//               ? "opacity-100 scale-y-100 translate-y-0"
+//               : "opacity-0 scale-y-0 -translate-y-2 pointer-events-none"
+//           }`}
+//         >
+//           <ul className="py-2">
+//             {items.map((item, index) => (
+//               <li
+//                 key={item.label}
+//                 className={`transition-all duration-300 ease-in-out ${
+//                   isMenuOpen
+//                     ? "translate-x-0 opacity-100"
+//                     : "-translate-x-4 opacity-0"
+//                 }`}
+//                 style={{
+//                   transitionDelay: isMenuOpen ? `${index * 50}ms` : "0ms",
+//                 }}
+//               >
+//                 <a
+//                   href={item.href}
+//                   onClick={(e) => handleSmoothScroll(e, item.href)}
+//                   className="block px-4 py-3 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold transition-colors duration-300 ease-in-out cursor-pointer border-b border-blue-200 last:border-b-0"
+//                 >
+//                   {item.label}
+//                 </a>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* Overlay for mobile */}
+//       <div
+//         className={`lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm -z-10 transition-opacity duration-300 ease-in-out ${
+//           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+//         }`}
+//         onClick={() => setIsMenuOpen(false)}
+//       />
+//     </nav>
+//   );
+// }
+
+// "use client";
+// "use client";
+// import React, { useState, useEffect } from "react";
+// import { FaBars, FaTimes } from "react-icons/fa";
+
+// export default function Navbar() {
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setIsScrolled(window.scrollY > 30);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const items = [
+//     { label: "Home", href: "#home" },
+//     { label: "About", href: "#about" },
+//     { label: "Skills", href: "#skills" },
+//     { label: "Projects", href: "#projects" },
+//     { label: "Testimonials", href: "#testimonials" },
+//     { label: "Contact", href: "#contact" },
+//   ];
+
+//   const handleSmoothScroll = (e, href) => {
+//     e.preventDefault();
+//     setIsMenuOpen(false);
+//     const targetElement = document.querySelector(href);
+//     const navbarHeight = 80;
+//     if (targetElement) {
+//       const position =
+//         href === "#home" ? 0 : targetElement.offsetTop - navbarHeight;
+//       window.scrollTo({ top: position, behavior: "smooth" });
+//     }
+//   };
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen(!isMenuOpen);
+//   };
+
+//   return (
+//     <nav className="fixed top-0 left-0 w-full z-50 px-4 py-3">
+//       {/* Desktop Navbar */}
+//       <div className="hidden lg:flex justify-center">
+//         <div
+//           className={`w-full transition-all duration-700 ease-in-out rounded-xl border border-blue-500 bg-blue-50/30 backdrop-blur-lg
+//             ${
+//               isScrolled
+//                 ? "max-w-[700px] px-8 py-3 shadow-md scale-[0.98]"
+//                 : "max-w-screen px-10 py-4 scale-100"
+//             } mx-auto`}
+//         >
+//           <ul className="flex justify-center gap-4">
+//             {items.map((item) => (
+//               <li key={item.label}>
+//                 <a
+//                   href={item.href}
+//                   onClick={(e) => handleSmoothScroll(e, item.href)}
+//                   className="text-blue-500 hover:text-white hover:bg-blue-500 text-lg font-semibold px-3 py-1 border border-blue-500 rounded-lg transition-all duration-300 ease-in-out whitespace-nowrap"
+//                 >
+//                   {item.label}
+//                 </a>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       </div>
+
+//       {/* Mobile Navbar */}
+//       <div className="lg:hidden relative z-50">
+//         {/* Top Nav Row */}
+//         <div className="flex justify-between items-center bg-blue-50/90 backdrop-blur-lg px-4 py-3 rounded-xl border border-blue-500">
+//           <div className="text-blue-500 font-bold text-lg">Mohammed Ansari</div>
+//           <button
+//             onClick={toggleMenu}
+//             className="text-blue-500 hover:text-blue-600 p-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110"
+//             aria-label="Toggle menu"
+//           >
+//             {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+//           </button>
+//         </div>
+
+//         {/* Mobile Menu Dropdown Below Navbar */}
+//         {isMenuOpen && (
+//           <div className="mt-2 bg-blue-50/95 backdrop-blur-lg rounded-xl border border-blue-500 shadow-lg transition-all duration-300 ease-in-out overflow-hidden">
+//             <ul className="py-2">
+//               {items.map((item, index) => (
+//                 <li
+//                   key={item.label}
+//                   className="transition-all duration-300 ease-in-out"
+//                   style={{ transitionDelay: `${index * 50}ms` }}
+//                 >
+//                   <a
+//                     href={item.href}
+//                     onClick={(e) => handleSmoothScroll(e, item.href)}
+//                     className="block px-4 py-3 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold transition-colors duration-300 ease-in-out cursor-pointer border-b border-blue-200 last:border-b-0"
+//                   >
+//                     {item.label}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         )}
+//       </div>
+
+//       {/* Overlay when menu is open */}
+//       {isMenuOpen && (
+//         <div
+//           className="lg:hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+//           onClick={() => setIsMenuOpen(false)}
+//         />
+//       )}
+//     </nav>
+//   );
+// }
+
+"use client";
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -146,7 +395,6 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -163,7 +411,6 @@ export default function Navbar() {
   const handleSmoothScroll = (e, href) => {
     e.preventDefault();
     setIsMenuOpen(false);
-
     const targetElement = document.querySelector(href);
     const navbarHeight = 80;
     if (targetElement) {
@@ -185,11 +432,11 @@ export default function Navbar() {
           className={`w-full transition-all duration-700 ease-in-out rounded-xl border border-blue-500 bg-blue-50/30 backdrop-blur-lg
             ${
               isScrolled
-                ? "max-w-3xl px-6 py-3 shadow-md scale-[0.98]"
+                ? "max-w-[700px] px-8 py-3 shadow-md scale-[0.98]"
                 : "max-w-screen px-10 py-4 scale-100"
             } mx-auto`}
         >
-          <ul className="flex justify-center gap-6">
+          <ul className="flex justify-center gap-4">
             {items.map((item) => (
               <li key={item.label}>
                 <a
@@ -206,7 +453,8 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="lg:hidden">
+      <div className="lg:hidden relative z-50">
+        {/* Topbar */}
         <div className="flex justify-between items-center bg-blue-50/90 backdrop-blur-lg px-4 py-3 rounded-xl border border-blue-500">
           <div className="text-blue-500 font-bold text-lg">Mohammed Ansari</div>
           <button
@@ -218,47 +466,56 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`mt-2 bg-blue-50/95 backdrop-blur-lg rounded-xl border border-blue-500 shadow-lg overflow-hidden transition-all duration-300 ease-in-out transform origin-top ${
-            isMenuOpen
-              ? "opacity-100 scale-y-100 translate-y-0"
-              : "opacity-0 scale-y-0 -translate-y-2 pointer-events-none"
-          }`}
-        >
-          <ul className="py-2">
-            {items.map((item, index) => (
-              <li
-                key={item.label}
-                className={`transition-all duration-300 ease-in-out ${
-                  isMenuOpen
-                    ? "translate-x-0 opacity-100"
-                    : "-translate-x-4 opacity-0"
-                }`}
-                style={{
-                  transitionDelay: isMenuOpen ? `${index * 50}ms` : "0ms",
-                }}
-              >
-                <a
-                  href={item.href}
-                  onClick={(e) => handleSmoothScroll(e, item.href)}
-                  className="block px-4 py-3 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold transition-colors duration-300 ease-in-out cursor-pointer border-b border-blue-200 last:border-b-0"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Animated Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="mt-2 bg-blue-50/95 backdrop-blur-lg rounded-xl border border-blue-500 shadow-lg overflow-hidden"
+            >
+              <ul className="py-2">
+                {items.map((item, index) => (
+                  <motion.li
+                    key={item.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{
+                      delay: index * 0.05,
+                      duration: 0.3,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleSmoothScroll(e, item.href)}
+                      className="block px-4 py-3 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold transition-colors duration-300 ease-in-out cursor-pointer border-b border-blue-200 last:border-b-0"
+                    >
+                      {item.label}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* Overlay for mobile */}
-      <div
-        className={`lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm -z-10 transition-opacity duration-300 ease-in-out ${
-          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      />
+      {/* Background Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 lg:hidden"
+            onClick={() => setIsMenuOpen(false)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          />
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
